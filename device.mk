@@ -243,9 +243,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
-# Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
+    android.hardware.power@1.0-impl \
+    power.hammerhead
 
 # Thermal HAL
 PRODUCT_PACKAGES += \

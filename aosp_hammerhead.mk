@@ -3,11 +3,15 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 
+TARGET_USES_AOSP := true
+TARGET_GAPPS_ARCH := arm
+TARGET_MINIMAL_APPS := true
+
 # Inherit basic aosp junk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common aosp stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit device vendor
 $(call inherit-product-if-exists, vendor/lge/hammerhead/hammerhead-vendor.mk)
@@ -20,7 +24,7 @@ $(call inherit-product, device/lge/hammerhead/properties.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerhead
-PRODUCT_NAME := lineage_hammerhead
+PRODUCT_NAME := aosp_hammerhead
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
